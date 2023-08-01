@@ -2,8 +2,8 @@ const { QueueServiceClient, QueueClient } = require("@azure/storage-queue");
 const { DefaultAzureCredential } = require("@azure/identity");
 const { delay } = require("@azure/core-util");
 
-const queueName = "dstest";
-const storageAccountName = "storageappdemodstest"; // Replace with your actual storage account name
+const queueName = process.env.STORAGE_QUEUE_NAME;
+const storageAccountName = process.env.STORAGE_ACCOUNT_NAME;
 const queueURL = `https://${storageAccountName}.queue.core.windows.net`
 let addItemsToQueue = true
 
